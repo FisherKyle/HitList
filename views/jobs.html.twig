@@ -7,15 +7,24 @@
         <div class="container">
         <h1>Things needing taking care of:</h1>
 
-        {% if job is not empty %}
-            <p>
+        {% if jobs is not empty %}
+            <p>Here are all your jobs:</p>
+            <ul>
+                {% for job in jobs %}
+                    <li>{{ job.getTitle }}</li>
+                    <li>{{ job.getDescription }}</li>
+                    <li>{{ job.getEmail }}</li>
+                    <li>{{ job.getPhone }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
         <form action="/jobs" method="post">
             <div class="form-group">
-                <label for="title">Job Title</label>
+                <label for="title">Next Job Title</label>
                 <input type="text" class="form-control" name="title" id="title">
 
-                <label for="Description">Description</label>
+                <label for="description">Description</label>
                 <input type="text" class="form-control" name="description" id="description">
 
                 <label for="email">Email</label>
@@ -26,6 +35,9 @@
             </div>
 
             <button type="submit" class="btn btn-danger">CONFIRM.</button>
+        </form>
+        <form action='/delete_jobs' method='post'>
+            <button type='submit'>Clear</button>
         </form>
         </div>
     </body>

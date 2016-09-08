@@ -9,7 +9,7 @@
         function __construct($title, $description, $email, $phone)
         {
             $this->title = $title;
-            $this->desription = $description;
+            $this->description = $description;
             $this->email = $email;
             $this->phone = $phone;
         }

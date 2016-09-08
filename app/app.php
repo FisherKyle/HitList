@@ -15,13 +15,18 @@
 
     $app->get("/", function() use ($app) {
 
-        return $app['twig']->render('create_job.html.twig', array('jobs' => Job::getALL()));
+        return $app['twig']->render('create_job.html.twig', array('jobs' => Job::getAll()));
     });
 
     $app->post("/jobs", function() use ($app) {
-        $job = new Job($_POST['title'], ['description'], ['email'], ['phone']);
+        $job = new Job($_POST['title'], $_POST['description'], $_POST['email'], $_POST['phone']);
         $job->save();
-        return $app['twig']->render('jobs.html.twig', array('job'  => $job));
+        return $app['twig']->render('jobs.html.twig', array('jobs'  => Job::getAll()));
+    });
+
+    $app->post("/delete_jobs", function() use ($app) {
+        Job::deleteAll();
+        return $app['twig']->render('jobs.html.twig', array('jobs'  => Job::getAll()));
     });
 
     return $app;

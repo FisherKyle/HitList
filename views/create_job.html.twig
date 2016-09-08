@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Job listings. Top hits.</title>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Is there something needing taking care of?</h1>
+
+        <form action="/jobs" method="post">
+            <div class="form-group">
+                <label for="title">Job Title</label>
+                <input type="text" class="form-control" name="title" id="title">
+
+                <label for="Description">Description</label>
+                <input type="text" class="form-control" name="description" id="description">
+
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" id="email">
+
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" name="phone" id="phone">
+            </div>
+
+            <button type="submit" class="btn btn-danger">CONFIRM.</button>
+        </form>
+        </div>
+    </body>
+</html>

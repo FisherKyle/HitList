@@ -42,7 +42,7 @@ Creating a container is a matter of creating a ``Container`` instance:
     $container = new Container();
 
 As many other dependency injection containers, Pimple manages two different
-kind of data: **services** and **parameters**.
+kinds of data: **services** and **parameters**.
 
 Defining Services
 ~~~~~~~~~~~~~~~~~
